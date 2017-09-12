@@ -7,9 +7,15 @@ import {
   Switch
 } from 'react-router-dom'
 import './App.css'
-import AddPhoto from './components/AddPhoto'
+import AddPhoto from '../AddPhoto/AddPhoto.js'
 
 class App extends Component {
+  constructor() {
+    super()
+    this.state = {
+      photo: null
+    }
+  }
   render () {
     return (
       <Router>
