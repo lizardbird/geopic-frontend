@@ -6,10 +6,11 @@ import {
   Redirect,
   Switch
 } from 'react-router-dom'
-import './App.css'
-import AddPhoto from '../AddPhoto/AddPhoto.js'
+import AddPhoto from './AddPhoto.js'
+import ShowPhotos from './ShowPhotos.js'
 
-class App extends Component {
+
+export default class App extends Component {
   constructor() {
     super()
     this.state = {
@@ -22,14 +23,14 @@ class App extends Component {
         <div>
           <div className='nav'>
             <div className='nav-item'><Link to='/add-photo'>Add Photo</Link></div>
+            <div className='nav-item'><Link to='/show-photos'>Show Photos</Link></div>
           </div>
           <div>
             <Route path='/add-photo' component={AddPhoto}/>
+            <Route path='/show-photos' component={ShowPhotos}/>
           </div>
         </div>
       </Router>
     )
   }
 }
-
-export default App

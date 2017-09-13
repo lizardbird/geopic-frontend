@@ -1,21 +1,32 @@
 import React, { Component } from 'react'
-import './AddPhoto.css'
 import axios from 'axios'
+import filestack from 'filestack-js'
+import './AddPhoto.css'
+const client = filestack.init('AIthnakkCRemysPZRwmJjz')
 
-class AddPhoto extends Component {
+export default class AddPhoto extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      value: ''
+      title: '',
+      photographer: '',
+      description: '',
+      filestackUrl: '',
+      lat: '',
+      long: '',
+      tags: ''
     }
     this.handleChange = this.handleChange.bind(this)
     this.savePhoto = this.savePhoto.bind(this)
   }
 
   handleChange (e) {
+    console.log(e.target.name, e.target.value);
     this.setState({
       [ e.target.name]: e.target.value
+
     })
+    console.log(this.state.filestackUrl);
   }
 
   savePhoto (e) {
@@ -23,7 +34,7 @@ class AddPhoto extends Component {
       title: this.state.title,
       photographer: this.state.photographer,
       description: this.state.description,
-      filestackUrl: this.state.fileStackUrl,
+      filestackUrl: this.state.filestackUrl,
       lat: this.state.lat,
       long: this.state.long,
       tags: this.state.tags
@@ -36,8 +47,6 @@ class AddPhoto extends Component {
         })
   }
 
-
-
   render () {
     return (
       <div>
@@ -46,7 +55,7 @@ class AddPhoto extends Component {
           <input type='text' name='title' placeholder='Title of Photo' />
           <input type='text' name='photographer' placeholder='Photographer' />
           <input type='text' name='description' placeholder='description' />
-          <input type='text' name='url' placeholder='url' />
+          <input type='text' name='filestackUrl' placeholder='url' />
           <input type='number' name='lat' placeholder='lat' />
           <input type='number' name='long' placeholder='long' />
           <input type='text' name='tags' placeholder='tags' />
@@ -56,5 +65,3 @@ class AddPhoto extends Component {
     )
   }
 }
-
-export default AddPhoto
