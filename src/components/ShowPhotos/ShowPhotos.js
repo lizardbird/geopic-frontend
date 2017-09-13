@@ -25,7 +25,7 @@ export default class ShowPhotos extends Component {
     let photos = this.state.data.map((photo, i) => {
       return (
         <li key={i}>
-          <img src={photo.filestackUrl}/>
+          <img className="img-responsive" src={photo.filestackUrl}/>
         </li>
       )
     })

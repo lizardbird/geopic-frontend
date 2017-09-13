@@ -9,8 +9,30 @@ html {
   overflow: hidden-x;
   text-align: center;
 }
+form {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  align-items: center;
+}
 input {
+  margin: 2%;
   font-size: 18px;
+}
+button {
+  width: 25%;
+}
+ul{
+  list-style: none;
+}
+.main-box {
+  display: flex;
+}
+.left {
+  width: 50%;
+}
+.right {
+  width: 50%;
 }
 .nav {
   display: flex;

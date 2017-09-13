@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import Geo from './GeoSuggest.js'
 import axios from 'axios'
-import './AddPhoto.css'
 
 export default class AddDetails extends Component {
   constructor (props) {
@@ -51,13 +50,12 @@ export default class AddDetails extends Component {
         <h2>Add Details to Your Photo</h2>
         Where was this photo taken?
         <Geo/>
+
         <form onChange={this.handleChange} onSubmit={this.savePhoto}>
           <input type='text' name='title' placeholder='Title of Photo' />
           <input type='text' name='photographer' placeholder='Photographer' />
           <input type='text' name='description' placeholder='description' />
           <input type='text' name='filestackUrl' placeholder='url' />
-          <input type='number' name='lat' placeholder='lat' />
-          <input type='number' name='long' placeholder='long' />
           <input type='text' name='tags' placeholder='tags' />
           <button type='submit'>Submit</button>
         </form>

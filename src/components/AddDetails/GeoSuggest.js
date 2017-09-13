@@ -7,6 +7,7 @@ export default class Geo extends React.Component {
   constructor (props) {
     super(props);
     this.state = { location: null };
+    this
   }
   onFocus () {
     console.log('onFocus')
