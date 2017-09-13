@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
+import Geo from './GeoSuggest.js'
 import axios from 'axios'
-import filestack from 'filestack-js'
 import './AddPhoto.css'
-const client = filestack.init('AIthnakkCRemysPZRwmJjz')
 
-export default class AddPhoto extends Component {
+export default class AddDetails extends Component {
   constructor (props) {
     super(props)
     this.state = {
@@ -26,7 +25,6 @@ export default class AddPhoto extends Component {
       [ e.target.name]: e.target.value
 
     })
-    console.log(this.state.filestackUrl);
   }
 
   savePhoto (e) {
@@ -50,7 +48,9 @@ export default class AddPhoto extends Component {
   render () {
     return (
       <div>
-        <h2>Welcome to Add Photo</h2>
+        <h2>Add Details to Your Photo</h2>
+        Where was this photo taken?
+        <Geo/>
         <form onChange={this.handleChange} onSubmit={this.savePhoto}>
           <input type='text' name='title' placeholder='Title of Photo' />
           <input type='text' name='photographer' placeholder='Photographer' />

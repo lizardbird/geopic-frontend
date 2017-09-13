@@ -9,7 +9,6 @@ export default class ShowPhotos extends Component {
       data: []
     }
   }
-
   componentDidMount() {
     axios.get('http://localhost:4200/api/photos')
         .then((res) => {
@@ -21,7 +20,6 @@ export default class ShowPhotos extends Component {
           console.log(err)
         })
   }
-
   render () {
     console.log(this.state)
     let photos = this.state.data.map((photo, i) => {
