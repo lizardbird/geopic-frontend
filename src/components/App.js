@@ -5,6 +5,7 @@ import {
   Link,
   Switch
 } from 'react-router-dom'
+import { connect } from 'react-redux'
 
 import filestack from 'filestack-js'
 import './App.css'
@@ -16,18 +17,11 @@ import Upload from '../components/Upload'
 
 const client = filestack.init('AIthnakkCRemysPZRwmJjz')
 
+
 export default class App extends Component {
   constructor (props) {
     super(props)
-    this.state = {
-      title: 'This is my test title',
-      photographer: '',
-      description: '',
-      filestackUrl: '',
-      lat: '',
-      long: '',
-      tags: ''
-    }
+    console.log("props", props);
   }
   onUpload (filestackUrl) {
     console.log(`setting state of filestackurl`)
@@ -77,7 +71,6 @@ export default class App extends Component {
                     return (
                       <AddDetails
                         {...props}
-                        filestackUrl={this.state.filestackUrl}
                     />
                     )
                   }}

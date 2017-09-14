@@ -50,9 +50,7 @@ export default class AddDetails extends Component {
       <div>
         <h2>Add Details to Your Photo</h2>
         filestack url is {this.props.filestackUrl} <br/><br/>
-        Where was this photo taken?
-        <Geo/>
-
+    
         <form onChange={this.handleChange} onSubmit={this.savePhoto}>
           <input type='text' name='title' placeholder='Title of Photo' />
           <input type='text' name='photographer' placeholder='Photographer' />
