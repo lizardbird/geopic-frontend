@@ -1,8 +1,8 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './components/App/App.js';
+import React from 'react'
+import ReactDOM from 'react-dom'
 
+import App from './pages/App'
 
-ReactDOM.render(
-  <App />,
-  document.getElementById('root'));
+const geopic = document.getElementById('geopic')
+
+ReactDOM.render( <App />, geopic)

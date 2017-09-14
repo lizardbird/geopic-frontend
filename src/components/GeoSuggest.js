@@ -7,7 +7,6 @@ export default class Geo extends React.Component {
   constructor (props) {
     super(props);
     this.state = { location: null };
-    this
   }
   onFocus () {
     console.log('onFocus')
@@ -23,6 +22,7 @@ export default class Geo extends React.Component {
 
   onSuggestSelect (suggest) {
     console.log(suggest)
+
   }
 
   onSuggestNoResults (userInput) {

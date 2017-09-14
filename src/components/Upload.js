@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export default class Container extends Component {
+export default class Upload extends Component {
 
   constructor (props) {
     super(props)
@@ -11,8 +11,7 @@ export default class Container extends Component {
     this.uploadImage()
       .then(data => {
         const { url, handle } = data.filesUploaded[0]
-        this.setState({ url })
-        this.getMetadata(handle)
+        this.props.onUpload(url)
         console.log(JSON.stringify(data.filesUploaded))
       })
       .catch(err => console.log(err))
