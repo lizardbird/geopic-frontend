@@ -1,27 +1,32 @@
 import React, { Component } from 'react'
+
 import {
   BrowserRouter as Router,
   Route,
   Link,
   Switch
 } from 'react-router-dom'
+
 import { connect } from 'react-redux'
 
 import filestack from 'filestack-js'
 import './App.css'
 
-import AddDetails from '../components/AddDetails'
-import Geo from '../components/GeoSuggest'
-import ShowPhotos from '../components/ShowPhotos'
-import Upload from '../components/Upload'
+import AddDetails from './AddDetails'
+import Geo from './GeoSuggest'
+import ShowPhotos from './ShowPhotos'
+import Upload from './Upload'
 
+import { fetchPhotos } from '../actions'
 const client = filestack.init('AIthnakkCRemysPZRwmJjz')
 
-
-export default class App extends Component {
+class App extends Component {
   constructor (props) {
     super(props)
     console.log("props", props);
+  }
+  componentWillMount() {
+
   }
   onUpload (filestackUrl) {
     console.log(`setting state of filestackurl`)
@@ -31,6 +36,7 @@ export default class App extends Component {
   }
 
   render () {
+
     return (
       <Router>
         <div>
@@ -85,3 +91,11 @@ export default class App extends Component {
     )
   }
 }
+function mapState (state) {
+  return {
+
+  }
+}
+App = connect(mapState)(App)
+
+export default App
