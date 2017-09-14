@@ -21,8 +21,10 @@ export default class Geo extends React.Component {
   }
 
   onSuggestSelect (suggest) {
-    console.log(suggest)
-
+    console.log('selected', suggest)
+    // this.setState({
+    //   location: suggest.location
+    // })
   }
 
   onSuggestNoResults (userInput) {

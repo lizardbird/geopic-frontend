@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import { fetchPhotos } from '../actions'
 
 export default class ShowPhotos extends Component {
   constructor (props) {
@@ -10,7 +9,15 @@ export default class ShowPhotos extends Component {
     }
   }
   componentDidMount() {
-    fetchPhotos()
+    axios.get('http://localhost:4200/api/photos')
+        .then((res) => {
+          this.setState({
+            data: res.data
+          })
+        })
+        .catch((err) => {
+          console.log(err)
+        })
   }
   render () {
     console.log(this.state)
