@@ -17,7 +17,6 @@ import Geo from './GeoSuggest'
 import ShowPhotos from './ShowPhotos'
 import Upload from './Upload'
 
-// import { fetchPhotos } from '../actions'
 const client = filestack.init('AIthnakkCRemysPZRwmJjz')
 
 class App extends Component {
@@ -25,16 +24,6 @@ class App extends Component {
     super(props)
     console.log("props", props);
   }
-  componentWillMount() {
-
-  }
-  onUpload (filestackUrl) {
-    console.log(`setting state of filestackurl`)
-    this.setState({
-      filestackUrl: filestackUrl
-    })
-  }
-
   render () {
 
     return (
@@ -55,7 +44,7 @@ class App extends Component {
                       <Upload
                         {...props}
                         client={client}
-                        onUpload={this.onUpload.bind(this)}
+
                       />
                     )
                   }}
@@ -66,7 +55,7 @@ class App extends Component {
                     return (
                       <Geo
                         {...props}
-                        onUpload={this.onUpload.bind(this)}
+                      
                       />
                     )
                   }}

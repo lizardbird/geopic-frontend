@@ -9,6 +9,8 @@ class ShowPhotos extends Component {
     this.fetchPhotos = this.fetchPhotos.bind(this)
   }
   componentDidMount () {
+    this.props.dispatch(fetchPhotos())
+    console.log(this.props.photos);
   }
 
   fetchPhotos () {
@@ -30,7 +32,8 @@ class ShowPhotos extends Component {
         {(this.props.fetching || this.props.fetched) || fetchPhotosButton}
         <div className='gallery'>
           {this.props.fetching && <p>Loading...</p>}
-          {this.props.fetched && !photos.legth && <p>Nothing here yet!</p>}
+          {this.props.fetched && !photos.length && <p>Nothing here yet!</p>}
+          {photos}
         </div>
       </div>
     )

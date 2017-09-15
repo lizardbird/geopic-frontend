@@ -1,4 +1,13 @@
 export default function reducer(state = {
+  currentPhoto: {
+    title: "title",
+    photographer: "photographer",
+    description: "description",
+    filestackUrl: "filestackUrl",
+    lat: "lat",
+    long: "long",
+    tags: "tags"
+  },
   photos: [],
   fetching: false,
   fetched: false,
