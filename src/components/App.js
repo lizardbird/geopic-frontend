@@ -89,8 +89,8 @@ class App extends Component {
   }
 }
 function mapState (state) {
-  return {
-
+  return { // each of the properties on this object will be passed as a prop to the `App` component
+    photos: state.photo.photos
   }
 }
 App = connect(mapState)(App)
