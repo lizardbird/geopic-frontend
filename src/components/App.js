@@ -40,9 +40,6 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <div className='header'>
-            <h1>GeoPic</h1>
-          </div>
           <div className='nav'>
             <div className='nav-item'><Link to='/upload'>Upload</Link></div>
             <div className='nav-item'><Link to='/geo'>Geo</Link></div>
