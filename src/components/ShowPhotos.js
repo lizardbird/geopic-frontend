@@ -6,6 +6,7 @@ import { fetchPhotos } from '../actions'
 class ShowPhotos extends Component {
   constructor (props) {
     super(props)
+    console.log("props", props);
     this.fetchPhotos = this.fetchPhotos.bind(this)
   }
   componentDidMount () {
@@ -45,7 +46,7 @@ const mapStateToProps = (state) => {
   return {
     photos: photo.photos,
     fetching: photo.fetching,
-    fetched: photo.fetched
+    fetched: photo.fetched,
   }
 }
 

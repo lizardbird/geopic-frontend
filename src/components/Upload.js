@@ -1,9 +1,13 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 
-export default class Upload extends Component {
+import { addURL } from '../actions'
+
+class Upload extends Component {
 
   constructor (props) {
     super(props)
+    console.log(props);
     this.state = { url: null, metadata: null }
   }
 
@@ -14,7 +18,7 @@ export default class Upload extends Component {
         this.setState( {
           url: url
         })
-        this.props.onUpload(url)
+        this.props.dispatch(addURL(url))
         console.log(JSON.stringify(data.filesUploaded))
       })
       .catch(err => console.log(err))
@@ -63,3 +67,11 @@ export default class Upload extends Component {
     )
   }
 }
+const mapStateToProps = (state) => {
+  const { photo } = state
+  return {
+    currentPhoto: photo.currentPhoto
+  }
+}
+
+export default connect(mapStateToProps)(Upload)

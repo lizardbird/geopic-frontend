@@ -24,6 +24,7 @@ form input, input {
 }
 ul {
   list-style: none;
+  padding: 0;
 }
 li {
   list-style: none;
@@ -51,11 +52,21 @@ h2, h1 {
 }
 .nav-item {
   margin: 2%;
-  width: 100px;
+  width: 150px;
   text-align: center;
-  background-color: #96bc33;
+  background-color:#96bc33;
   padding: 1%;
   border-radius: 10px;
+  border: 2px solid #365f31;
+  box-shadow: 5px 5px 5px #D6DBDF;
+  font-weight: bold;
+}
+.nav-item a {
+  color: #fff;
+}
+.nav-item:hover {
+  background-color: #365f31 ;
+  cursor: pointer;
 }
 .gallery {
   display: flex;
@@ -80,4 +91,9 @@ h2, h1 {
 }
 .geosuggest__suggests-wrapper{
   background-color: #fff;
+  color: gray;
+  text-align: center;
+}
+.geosuggest__suggests {
+  border: 1px solid gray;
 }

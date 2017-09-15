@@ -16,6 +16,15 @@ export function fetchPhotos(){
   }
 }
 
+export function addURL(url){
+  return {
+    type: 'ADD_URL',
+    payload: {
+      url
+    },
+  }
+}
+
 export function addPhoto(id, text) {
   return {
     type: 'ADD_PHOTO',

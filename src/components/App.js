@@ -22,8 +22,11 @@ const client = filestack.init('AIthnakkCRemysPZRwmJjz')
 class App extends Component {
   constructor (props) {
     super(props)
-    console.log("props", props);
   }
+  componentWillMount() {
+
+  }
+
   render () {
 
     return (
@@ -44,7 +47,6 @@ class App extends Component {
                       <Upload
                         {...props}
                         client={client}
-
                       />
                     )
                   }}
@@ -55,7 +57,6 @@ class App extends Component {
                     return (
                       <Geo
                         {...props}
-                      
                       />
                     )
                   }}
@@ -79,7 +80,16 @@ class App extends Component {
 }
 function mapState (state) {
   return { // each of the properties on this object will be passed as a prop to the `App` component
-    photos: state.photo.photos
+    photos: state.photo.photos,
+    currentPhoto: {
+      title: "title",
+      photographer: "photographer",
+      description: "description",
+      filestackUrl: "filestackUrl",
+      lat: "lat",
+      long: "long",
+      tags: "tags"
+    },
   }
 }
 App = connect(mapState)(App)
