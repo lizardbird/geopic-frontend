@@ -10,7 +10,10 @@ export default class Upload extends Component {
   setPicture = () => {
     this.uploadImage()
       .then(data => {
-        const { url, handle } = data.filesUploaded[0]
+        const { url } = data.filesUploaded[0]
+        this.setState( {
+          url: url
+        })
         this.props.onUpload(url)
         console.log(JSON.stringify(data.filesUploaded))
       })
@@ -42,12 +45,12 @@ export default class Upload extends Component {
   }
 
   render () {
-    const { url, metadata } = this.state
+    const { url } = this.state
     return (
-      <div className="container">
+      <div className="maincontent">
               <img
-                className="img-responsive"
-                src={url || 'http://placehold.it/800x600?text=Upload+a+Photo'}
+                className="preview-img"
+                src={url || 'http://placehold.it/400.png/000/?text=Upload+a+Photo'}
                 alt={url}
               />
             <button

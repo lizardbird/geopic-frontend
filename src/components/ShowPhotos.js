@@ -23,16 +23,16 @@ export default class ShowPhotos extends Component {
     console.log(this.state)
     let photos = this.state.data.map((photo, i) => {
       return (
-        <li key={i}>
-          <img className="img-responsive" src={photo.filestackUrl}/>
-        </li>
+        <div key={i}>
+          <img className="thumbnail" src={photo.filestackUrl} alt={photo.filestackUrl}/>
+        </div>
       )
     })
     return (
       <div>
-        <ul>
+        <div className="gallery">
           {photos}
-        </ul>
+        </div>
       </div>
     )
   }

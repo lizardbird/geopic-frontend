@@ -26,7 +26,7 @@ export default function reducer(state = {
       }
     }
     case 'UPDATE_PHOTO': {
-      const { id, url } = action.payload
+      const { id } = action.payload
       const newPhotos = [...state.photos]
       const photoToUpdate = newPhotos.findIndex(photo => photo.id === id)
       newPhotos[photoToUpdate] = action.payload
@@ -39,7 +39,7 @@ export default function reducer(state = {
     case 'DELETE_PHOTO': {
       return {
         ...state,
-        photos: state.photos.filter(photo => photo.id != action.payload)
+        photos: state.photos.filter(photo => photo.id !== action.payload)
       }
     }
     // no default

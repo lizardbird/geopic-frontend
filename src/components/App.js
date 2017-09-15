@@ -17,7 +17,7 @@ import Geo from './GeoSuggest'
 import ShowPhotos from './ShowPhotos'
 import Upload from './Upload'
 
-import { fetchPhotos } from '../actions'
+// import { fetchPhotos } from '../actions'
 const client = filestack.init('AIthnakkCRemysPZRwmJjz')
 
 class App extends Component {
@@ -40,14 +40,16 @@ class App extends Component {
     return (
       <Router>
         <div>
+          <div className='header'>
+            <h1>GeoPic</h1>
+          </div>
           <div className='nav'>
             <div className='nav-item'><Link to='/upload'>Upload</Link></div>
             <div className='nav-item'><Link to='/geo'>Geo</Link></div>
             <div className='nav-item'><Link to='/add-details'>Add Details</Link></div>
             <div className='nav-item'><Link to='/show-photos'>Show Photos</Link></div>
           </div>
-          <div className='main-box'>
-            <div className='left'>
+          <div className='maincontent'>
               <Switch>
                 <Route
                   path='/upload'
@@ -84,8 +86,6 @@ class App extends Component {
                 <Route path='/show-photos' component={ShowPhotos} />
               </Switch>
             </div>
-            <div className='right' />
-          </div>
         </div>
       </Router>
     )

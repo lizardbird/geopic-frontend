@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Geo from './GeoSuggest.js'
 import axios from 'axios'
 
 export default class AddDetails extends Component {
@@ -47,16 +46,15 @@ export default class AddDetails extends Component {
 
   render () {
     return (
-      <div>
-        <h2>Add Details to Your Photo</h2>
-        filestack url is {this.props.filestackUrl} <br/><br/>
-    
+      <div className="column">
+        <h2>Just a few more details...</h2>
+
         <form onChange={this.handleChange} onSubmit={this.savePhoto}>
-          <input type='text' name='title' placeholder='Title of Photo' />
-          <input type='text' name='photographer' placeholder='Photographer' />
+          <input type='text' name='title' placeholder='title' />
+          <input type='text' name='photographer' placeholder='photographer' />
           <input type='text' name='description' placeholder='description' />
           <input type='text' name='tags' placeholder='tags' />
-          <button type='submit'>Submit</button>
+          <button type='submit'>Save Photo</button>
         </form>
       </div>
     )
