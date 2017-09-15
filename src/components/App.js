@@ -42,6 +42,7 @@ class App extends Component {
         <div>
           <div className='header'>
             <h1>GeoPic</h1>
+            <h2>There are {this.props.photos.length} photos in state</h2>
           </div>
           <div className='nav'>
             <div className='nav-item'><Link to='/upload'>Upload</Link></div>
@@ -92,8 +93,8 @@ class App extends Component {
   }
 }
 function mapState (state) {
-  return {
-
+  return { // each of the properties on this object will be passed as a prop to the `App` component
+    photos: state.photo.photos
   }
 }
 App = connect(mapState)(App)
